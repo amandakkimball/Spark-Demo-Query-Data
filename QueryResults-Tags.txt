@@ -1,0 +1,14 @@
+--https://data.stackexchange.com/stackoverflow/query/edit/1067881
+--(For future use it is stored on stackexchange here with out my annotation.)
+
+--Selecting the Tags and the PostIds for my inverted Index search
+select Tags, Id, CreationDate, ClosedDate
+from
+  Posts
+
+--Limited the search by Tags matching in both Tags and PostTags tables and Ids in Posts and PostTags tables.
+--Also limited it to posts in 2019 and posts with an answer.
+where Posts.CreationDate Like '%2019%'
+and Posts.AnswerCount > 1
+--I sorted the data becuase it was easier for me to look through. This is not neccessary for the excersize.
+
